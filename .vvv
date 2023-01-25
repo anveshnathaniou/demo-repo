@@ -1,0 +1,15 @@
+def convert_to_nested_list(input_list, n):
+    
+    if not input_list:
+        return []
+    
+    nested_list = [input_list[i] for i in range(n)]
+    
+    rest_of_list = convert_to_nested_list(input_list[n:], n)
+    
+    return [nested_list] + rest_of_list
+
+flat_list = [1, 2, 3, 4, 5, 6, 7, 8]
+n = 1
+nested_list = convert_to_nested_list(flat_list, n)
+print(nested_list) 
